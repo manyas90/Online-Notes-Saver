@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useRef } from "react";
+import { PASTE_URL } from "../utils/api";
 
 
 const EditPaste = () => {
@@ -21,7 +22,7 @@ const EditPaste = () => {
   // LOAD EXISTING NOTE
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/paste/${id}`)
+      .get(``${PASTE_URL}/${id}``)
       .then((res) => {
         setTitle(res.data.title);
         setContent(res.data.content);
@@ -35,7 +36,7 @@ const EditPaste = () => {
       setLoading(true);
 
       const res = await axios.put(
-      `http://localhost:5000/api/paste/${id}`,
+      `${PASTE_URL}/${id}`,
         { title, content },
         {
         headers: {
