@@ -7,7 +7,7 @@ import { SlEye } from "react-icons/sl";
 import { MdOutlineContentCopy } from "react-icons/md";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import { PASTE_URL } from "../utils/api";
+import { PASTE_URL, DELETE_URL } from "../utils/api";
 
 const Paste = () => {
   const [pastes, setPastes] = useState([]);
@@ -39,7 +39,7 @@ const Paste = () => {
     if (!window.confirm("Delete this note?")) return;
 
     try {
-      await fetch(`http://localhost:5000/api/notes/${id}`, {
+      await fetch(`${DELETE_URL}/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -52,7 +52,7 @@ const Paste = () => {
   };
 
   const handleDownload = async (id) => {
-  const pdfUrl = `http://localhost:5000/api/paste/${id}/pdf`;
+  const pdfUrl = `${PASTE_URL}/${id}/pdf`;
 
   try {
     const response = await fetch(pdfUrl);
