@@ -1,4 +1,4 @@
-export const BASE_URL = "https://online-notes-saver-backend.onrender.com/api";
+export const BASE_URL ="https://online-notes-saver-backend.onrender.com/api";
 
 export const AUTH_URL = `${BASE_URL}/auth`;
 export const PASTE_URL = `${BASE_URL}/paste`;
