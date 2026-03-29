@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { PASTE_URL } from "../utils/api";
 
 export const fetchPasteById = createAsyncThunk(
   "paste/fetchPasteById",
