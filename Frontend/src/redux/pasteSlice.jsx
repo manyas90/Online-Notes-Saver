@@ -6,7 +6,7 @@ export const fetchPasteById = createAsyncThunk(
   async (id, { rejectWithValue }) => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/paste/${id}`
+        `${PASTE_URL}/${id}`
       );
       return res.data;
     } catch (err) {
