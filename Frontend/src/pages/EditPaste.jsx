@@ -22,7 +22,7 @@ const EditPaste = () => {
   // LOAD EXISTING NOTE
   useEffect(() => {
     axios
-      .get(``${PASTE_URL}/${id}``)
+      .get(`${PASTE_URL}/${id}`)
       .then((res) => {
         setTitle(res.data.title);
         setContent(res.data.content);
